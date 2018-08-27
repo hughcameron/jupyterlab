@@ -1,0 +1,8 @@
+version: '3'
+services:
+  anaconda:
+    build: .
+    volumes:
+     - /home/data:/workspace
+    ports:
+     - "8000:8000"
