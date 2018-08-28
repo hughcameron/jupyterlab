@@ -1,6 +1,6 @@
 version: '3'
 services:
-  anaconda:
+  datalab:
     build: .
     volumes:
      - /home/data:/workspace
