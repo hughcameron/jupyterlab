@@ -1,5 +1,5 @@
 
-# DataLab
+# JupyterLab
 
 This container uses [Anaconda](https://hub.docker.com/r/continuumio/anaconda3/) as a base image. Exploratory Data Analysis can be conducted using [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/).
 

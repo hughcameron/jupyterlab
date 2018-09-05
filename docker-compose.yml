@@ -1,8 +1,8 @@
 version: '3'
 services:
-  datalab:
+  jupyterlab:
     build: .
     volumes:
      - /home/data:/workspace
     ports:
-     - "8000:8000"
+     - "8080:8080"
