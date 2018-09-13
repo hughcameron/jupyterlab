@@ -3,6 +3,7 @@ services:
   jupyterlab:
     build: .
     volumes:
-     - /home/data:/workspace
+      - '/home/data:/workspace'
     ports:
-     - "8080:8080"
+      - '8080:8080'
+    container_name: jupyterlab
