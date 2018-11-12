@@ -6,7 +6,7 @@ This container uses [Anaconda](https://hub.docker.com/r/continuumio/anaconda3/) 
 # Packages
 Extra packages are included based on preference:
 
-- [Ikon](https://github.com/hughcameron/ikon)
+- [Summer](https://github.com/hughcameron/summer)
 - [psycopg2](http://initd.org/psycopg/)
 - [pymysql](https://github.com/PyMySQL/PyMySQL/)
 - [regex](https://bitbucket.org/mrabarnett/mrab-regex)
