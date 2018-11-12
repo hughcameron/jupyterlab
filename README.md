@@ -15,6 +15,22 @@ Extra packages are included based on preference:
 - [flanker](https://github.com/mailgun/flanker)
 
 
-# Building The Container
+# Deploying with Docker Compose
 
-`docker-compose build --no-cache`
+To deploy this image using Docker Compose create a `docker-compose.yml` file with this
+
+```
+version: '3'
+services:
+  jupyterlab:
+    build: https://github.com/hughcameron/jupyterlab.git
+    volumes:
+      - '~:/workspace'
+    ports:
+      - '8000:8080'
+    container_name: jupyterlab
+```
+
+Then run this command from the directory holding the file:
+
+`docker-compose up -d --build`
