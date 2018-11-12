@@ -17,7 +17,7 @@ Extra packages are included based on preference:
 
 # Deploying with Docker Compose
 
-To deploy this image using Docker Compose create a `docker-compose.yml` file with this
+To deploy this image using Docker Compose create a `docker-compose.yml` file with this:
 
 ```
 version: '3'
@@ -27,7 +27,7 @@ services:
     volumes:
       - '~:/workspace'
     ports:
-      - '8000:8080'
+      - '8080:8080'
     container_name: jupyterlab
 ```
 
