@@ -13,6 +13,7 @@ RUN conda install \
     geopandas \
     ipywidgets \
     matplotlib-venn \
+    nameparser \
     nodejs \
     pandasql \
     phonenumbers \
