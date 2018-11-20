@@ -34,6 +34,7 @@ RUN pip install fiona geopandas
 
 RUN pip install \
     chartify \
+    chromedriver_installer \
     ballpark \
     flanker \
     git+https://github.com/hughcameron/summer.git --upgrade
