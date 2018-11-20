@@ -33,6 +33,7 @@ RUN pip uninstall -y fiona geopandas
 RUN pip install fiona geopandas
 
 RUN pip install \
+    chartify \
     ballpark \
     flanker \
     git+https://github.com/hughcameron/summer.git --upgrade
