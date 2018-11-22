@@ -25,7 +25,8 @@ RUN conda install \
     regex \
     rtree \
     shapely \
-    vega_datasets
+    vega_datasets \
+    xmltodict
 
 # Geopandas fix from https://github.com/Kaggle/docker-python/blob/master/Dockerfile#L306 & https://www.kaggle.com/product-feedback/60653#post353813
 
