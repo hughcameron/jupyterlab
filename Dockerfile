@@ -24,7 +24,8 @@ RUN conda install \
     qgrid \
     regex \
     rtree \
-    shapely
+    shapely \
+    vega_datasets
 
 # Geopandas fix from https://github.com/Kaggle/docker-python/blob/master/Dockerfile#L306 & https://www.kaggle.com/product-feedback/60653#post353813
 
@@ -33,9 +34,10 @@ RUN pip uninstall -y fiona geopandas
 RUN pip install fiona geopandas
 
 RUN pip install \
-    chartify \
-    chromedriver_installer \
     ballpark \
+    chartify \
+    # chromedriver_installer \
+    createsend \
     flanker \
     git+https://github.com/hughcameron/summer.git --upgrade
 
