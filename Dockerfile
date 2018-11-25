@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3
+FROM continuumio/anaconda3:latest
 
 RUN conda config --add channels conda-forge --force
 
@@ -11,6 +11,7 @@ RUN conda install \
     fiona \
     folium \
     geopandas \
+    geopy \
     ipywidgets \
     matplotlib-venn \
     nameparser \
