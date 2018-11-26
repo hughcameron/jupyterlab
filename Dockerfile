@@ -43,14 +43,9 @@ RUN pip install \
     flanker \
     git+https://github.com/hughcameron/summer.git --upgrade
 
-# RUN jupyter lab clean
-
-# RUN jupyter labextension install \ 
-# jupyter-matplotlib \
-# jupyterlab_voyager \
-# qgrid
-
-# RUN jupyter lab build
+# Set Notebook Password
+RUN jupyter notebook --generate-config
+RUN echo "c.NotebookApp.password = " $NOTEBOOK_PASSWORD >> ~/.jupyter/jupyter_notebook_config.py
 
 WORKDIR /workspace
 CMD jupyter-lab --no-browser \

@@ -15,6 +15,25 @@ Extra packages are included based on preference:
 - [flanker](https://github.com/mailgun/flanker)
 
 
+# Notbook Password
+
+Setting a password to your notebook server is good practice. To add a password to you're notebook first encryt it by running this on your local interpreter:
+
+```
+from IPython import lib
+
+lib.passwd("YOUR_PASSWORD_HERE")
+```
+This will return a string like `sha1:e080efd3a948:27e429c741f4e9bd0a2f83500f24b1f2dcabdb86`
+
+Now create a `.env` to sit next to your `docker-compose.yml` file with these contents:
+
+```
+NOTEBOOK_PASSWORD=sha1:...........
+```
+
+Be sure to replace `sha1:...........` with your encrypted password.
+
 # Deploying with Docker Compose
 
 To deploy this image using Docker Compose create a `docker-compose.yml` file with this:
