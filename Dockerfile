@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:latest
+FROM jupyter/datascience-notebook:latest
 
 RUN conda config --add channels conda-forge --force
 
@@ -26,14 +26,15 @@ RUN conda install \
     regex \
     rtree \
     shapely \
+    tqdm \
     vega_datasets \
     xmltodict
 
 # Geopandas fix from https://github.com/Kaggle/docker-python/blob/master/Dockerfile#L306 & https://www.kaggle.com/product-feedback/60653#post353813
 
-RUN conda uninstall -y fiona geopandas
-RUN pip uninstall -y fiona geopandas
-RUN pip install fiona geopandas
+# RUN conda uninstall -y fiona geopandas
+# RUN pip uninstall -y fiona geopandas
+# RUN pip install fiona geopandas
 
 RUN pip install \
     ballpark \
@@ -41,12 +42,9 @@ RUN pip install \
     # chromedriver_installer \
     createsend \
     flanker \
+    rgeocoder \
     git+https://github.com/hughcameron/summer.git --upgrade
 
-# Set Notebook Password
-RUN jupyter notebook --generate-config
-RUN echo "c.NotebookApp.password = " $NOTEBOOK_PASSWORD >> ~/.jupyter/jupyter_notebook_config.py
-
-WORKDIR /workspace
-CMD jupyter-lab --no-browser \
-    --port=8080 --ip=0.0.0.0 --allow-root
+# WORKDIR /workspace
+# CMD jupyter-lab --no-browser \
+#     --port=8080 --ip=0.0.0.0 --allow-root

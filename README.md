@@ -39,15 +39,20 @@ Be sure to replace `sha1:...........` with your encrypted password.
 To deploy this image using Docker Compose create a `docker-compose.yml` file with this:
 
 ```
-version: '3'
+version: "3"
 services:
   jupyterlab:
     build: https://github.com/hughcameron/jupyterlab.git
     volumes:
-      - '~:/workspace'
+      - "~:/home/jovyan/work"
     ports:
-      - '8080:8080'
+      - "8000:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: "start-notebook.sh \
+      --NotebookApp.password=${NOTEBOOK_PASSWORD}"
     container_name: jupyterlab
+
 ```
 
 Then run this command from the directory holding the file:

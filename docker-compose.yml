@@ -1,9 +1,13 @@
-version: '3'
+version: "3"
 services:
   jupyterlab:
-    build: .
+    build: https://github.com/hughcameron/jupyterlab.git
     volumes:
-      - '/home/data:/workspace'
+      - "~:/home/jovyan/work"
     ports:
-      - '8080:8080'
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: "start-notebook.sh \
+      --NotebookApp.password=${NOTEBOOK_PASSWORD}"
     container_name: jupyterlab
