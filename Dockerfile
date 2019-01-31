@@ -56,7 +56,7 @@ WORKDIR /tmp/czmq
 # https://github.com/SciRuby/iruby#preparing-dependencies-on-1604
 RUN apt-get update
 RUN apt-get install -y libtool libffi-dev ruby ruby-dev make
-RUN apt-get install -y git libzmq-dev autoconf pkg-config
+RUN apt-get install -y git libzmq3-dev autoconf pkg-config
 RUN git clone https://github.com/zeromq/czmq /tmp/czmq
 RUN ./autogen.sh && ./configure && sudo make && sudo make install
 
