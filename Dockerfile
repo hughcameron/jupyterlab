@@ -48,8 +48,8 @@ RUN pip install \
 
 # Install iRuby as per https://github.com/SciRuby/iruby
 
-RUN sudo apt install libtool libffi-dev ruby ruby-dev make
-RUN sudo apt install libzmq3-dev libczmq-dev
+RUN apt install libtool libffi-dev ruby ruby-dev make
+RUN apt install libzmq3-dev libczmq-dev
 
 RUN gem install \cztop
 RUN gem install iruby --pre
