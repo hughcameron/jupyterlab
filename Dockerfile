@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook:latest
+FROM jupyter/pyspark-notebook:latest
 
 RUN conda config --add channels conda-forge --force
 
@@ -26,6 +26,7 @@ RUN conda install \
     regex \
     rtree \
     shapely \
+    s3fs \
     tqdm \
     vega_datasets \
     xmltodict
@@ -44,6 +45,15 @@ RUN pip install \
     flanker \
     rgeocoder \
     git+https://github.com/hughcameron/summer.git --upgrade
+
+# Install iRuby as per https://github.com/SciRuby/iruby
+
+RUN sudo apt install libtool libffi-dev ruby ruby-dev make
+RUN sudo apt install libzmq3-dev libczmq-dev
+
+RUN gem install \cztop
+RUN gem install iruby --pre
+RUN iruby register --force
 
 # WORKDIR /workspace
 # CMD jupyter-lab --no-browser \
