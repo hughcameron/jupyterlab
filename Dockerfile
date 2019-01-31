@@ -64,7 +64,7 @@ RUN gem install cztop iruby
 RUN iruby register
 
 # Install additional gems here
-RUN gem install rspec
+RUN gem install rspec pg
 
 # Reset user and work dir
 USER jovyan
