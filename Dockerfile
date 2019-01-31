@@ -47,14 +47,25 @@ RUN pip install \
     git+https://github.com/hughcameron/summer.git --upgrade
 
 # Install iRuby as per https://github.com/SciRuby/iruby
+# https://github.com/igorferst/iruby-dockerized/blob/master/Dockerfile
 
-RUN apt install libtool libffi-dev ruby ruby-dev make
-RUN apt install libzmq3-dev libczmq-dev
+# Need these values for setup
+USER root
+WORKDIR /tmp/czmq
 
-RUN gem install \cztop
-RUN gem install iruby --pre
-RUN iruby register --force
+# https://github.com/SciRuby/iruby#preparing-dependencies-on-1604
+RUN apt-get update
+RUN apt-get install -y libtool libffi-dev ruby ruby-dev make
+RUN apt-get install -y git libzmq-dev autoconf pkg-config
+RUN git clone https://github.com/zeromq/czmq /tmp/czmq
+RUN ./autogen.sh && ./configure && sudo make && sudo make install
 
-# WORKDIR /workspace
-# CMD jupyter-lab --no-browser \
-#     --port=8080 --ip=0.0.0.0 --allow-root
+RUN gem install cztop iruby
+RUN iruby register
+
+# Install additional gems here
+RUN gem install rspec
+
+# Reset user and work dir
+USER jovyan
+WORKDIR /home/jovyan
