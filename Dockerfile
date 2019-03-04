@@ -6,21 +6,19 @@ RUN jupyter labextension install @jupyterlab/git && \
     pip install jupyterlab-git && \
     jupyter serverextension enable --py --sys-prefix jupyterlab_git
 
-# other python libraries and JupyterLab extensions: 
-RUN pip install ipywidgets && \
-    pip install psycopg2-binary && \
-    pip install --upgrade google-cloud-bigquery && \
-    pip install -e git+https://github.com/SohierDane/BigQuery_Helper#egg=bq_helper && \
-    /opt/conda/bin/conda install --quiet --yes -c conda-forge ipywidgets && \
-    jupyter labextension install @jupyterlab/github && \
-    jupyter labextension install @jupyterlab/vega2-extension && \
-    jupyter labextension install @jpmorganchase/perspective-jupyterlab && \
-    jupyter labextension install beakerx-jupyterlab && \
-    jupyter labextension install @jupyterlab/toc && \
-    jupyter labextension install bqplot && \
-    jupyter labextension install jupyterlab-kernelspy && \
-    jupyter labextension install qgrid && \
-    jupyter labextension install knowledgelab
+# JupyterLab extensions: 
+RUN conda install --quiet --yes -c conda-forge ipywidgets
+
+RUN jupyter labextension install \
+    @jupyterlab/github \
+    @jupyterlab/vega2-extension \
+    # @jpmorganchase/perspective-jupyterlab \
+    beakerx-jupyterlab \
+    @jupyterlab/toc \
+    bqplot \
+    jupyterlab-kernelspy \
+    qgrid \
+    knowledgelab
 
 # various further data science libraries
 RUN conda install \
