@@ -11,7 +11,7 @@ RUN pip install ipywidgets && \
     pip install psycopg2-binary && \
     pip install --upgrade google-cloud-bigquery && \
     pip install -e git+https://github.com/SohierDane/BigQuery_Helper#egg=bq_helper && \
-    /opt/conda/bin/conda/bin/conda install --quiet --yes -c conda-forge ipywidgets && \
+    /opt/conda/bin/conda install --quiet --yes -c conda-forge ipywidgets && \
     jupyter labextension install @jupyterlab/github && \
     jupyter labextension install @jupyterlab/vega2-extension && \
     jupyter labextension install @jpmorganchase/perspective-jupyterlab && \
@@ -60,7 +60,7 @@ RUN pip install \
 
 # cleanup: 
 RUN npm cache clean --force && \
-    rm -rf /opt/conda/bin/conda/share/jupyter/lab/staging && \
+    rm -rf /opt/conda/share/jupyter/lab/staging && \
     rm -rf /home/jovyan/.cache/yarn && \
-    fix-permissions /opt/conda/bin/conda && \
+    fix-permissions /opt/conda && \
     fix-permissions /home/jovyan
