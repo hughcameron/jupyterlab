@@ -1,9 +1,28 @@
-FROM jupyter/pyspark-notebook:latest
+# Start from a core stack version
+FROM jupyter/all-spark-notebook:latest
 
-RUN conda config --add channels conda-forge --force
+# JupyterLab GIT extension: 
+RUN jupyter labextension install @jupyterlab/git && \
+    pip install jupyterlab-git && \
+    jupyter serverextension enable --py --sys-prefix jupyterlab_git
 
-# RUN apt-get update
+# other python libraries and JupyterLab extensions: 
+RUN pip install ipywidgets && \
+    pip install psycopg2-binary && \
+    pip install --upgrade google-cloud-bigquery && \
+    pip install -e git+https://github.com/SohierDane/BigQuery_Helper#egg=bq_helper && \
+    /opt/conda/bin/conda/bin/conda install --quiet --yes -c conda-forge ipywidgets && \
+    jupyter labextension install @jupyterlab/github && \
+    jupyter labextension install @jupyterlab/vega2-extension && \
+    jupyter labextension install @jpmorganchase/perspective-jupyterlab && \
+    jupyter labextension install beakerx-jupyterlab && \
+    jupyter labextension install @jupyterlab/toc && \
+    jupyter labextension install bqplot && \
+    jupyter labextension install jupyterlab-kernelspy && \
+    jupyter labextension install qgrid && \
+    jupyter labextension install knowledgelab
 
+# various further data science libraries
 RUN conda install \
     altair \
     boto3 \
@@ -22,7 +41,6 @@ RUN conda install \
     pyicu \
     pymysql \
     pyproj \
-    qgrid \
     regex \
     rtree \
     shapely \
@@ -30,12 +48,6 @@ RUN conda install \
     tqdm \
     vega_datasets \
     xmltodict
-
-# Geopandas fix from https://github.com/Kaggle/docker-python/blob/master/Dockerfile#L306 & https://www.kaggle.com/product-feedback/60653#post353813
-
-# RUN conda uninstall -y fiona geopandas
-# RUN pip uninstall -y fiona geopandas
-# RUN pip install fiona geopandas
 
 RUN pip install \
     ballpark \
@@ -46,26 +58,9 @@ RUN pip install \
     rgeocoder \
     git+https://github.com/hughcameron/summer.git --upgrade
 
-# Install iRuby as per https://github.com/SciRuby/iruby
-# https://github.com/igorferst/iruby-dockerized/blob/master/Dockerfile
-
-# Need these values for setup
-USER root
-WORKDIR /tmp/czmq
-
-# https://github.com/SciRuby/iruby#preparing-dependencies-on-1604
-RUN apt-get update
-RUN apt-get install -y libtool libffi-dev ruby ruby-dev make
-RUN apt-get install -y git libzmq3-dev autoconf pkg-config
-RUN git clone https://github.com/zeromq/czmq /tmp/czmq
-RUN ./autogen.sh && ./configure && sudo make && sudo make install
-
-RUN gem install cztop iruby
-RUN iruby register
-
-# Install additional gems here
-RUN gem install rspec pg
-
-# Reset user and work dir
-USER jovyan
-WORKDIR /home/jovyan
+# cleanup: 
+RUN npm cache clean --force && \
+    rm -rf /opt/conda/bin/conda/share/jupyter/lab/staging && \
+    rm -rf /home/jovyan/.cache/yarn && \
+    fix-permissions /opt/conda/bin/conda && \
+    fix-permissions /home/jovyan
