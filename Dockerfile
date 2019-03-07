@@ -11,10 +11,10 @@ RUN conda install --quiet --yes -c conda-forge ipywidgets
 
 USER root
 
-ADD https://jdbc.postgresql.org/download/postgresql-42.2.2.jar /usr/local/spark/jars
+ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 RUN chmod a+r /usr/local/spark/jars/*
 
-USER jovyan
+USER $NB_UID
 
 RUN jupyter labextension install \
     @jupyterlab/github \
