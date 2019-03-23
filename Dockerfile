@@ -63,19 +63,3 @@ RUN pip install \
     flanker \
     rgeocoder \
     git+https://github.com/hughcameron/summer.git --upgrade
-
-# cleanup: 
-RUN npm cache clean --force && \
-    rm -rf /opt/conda/share/jupyter/lab/staging && \
-    rm -rf /home/jovyan/.cache/yarn && \
-    fix-permissions /opt/conda && \
-    fix-permissions /home/jovyan
-
-# From: https://github.com/codercom/code-server/blob/master/Dockerfile
-
-FROM codercom/code-server
-
-WORKDIR /src
-COPY . .
-
-ENTRYPOINT ["code-server"]
