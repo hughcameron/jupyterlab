@@ -44,6 +44,7 @@ RUN conda install \
     phonenumbers \
     psycopg2 \
     pyicu \
+    pymapd \
     pymysql \
     pyproj \
     regex \
