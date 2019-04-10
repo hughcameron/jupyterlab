@@ -29,7 +29,9 @@ RUN jupyter labextension install \
 
 # various further data science libraries
 RUN conda install \
+    aiohttp \
     altair \
+    asyncio \
     boto3 \
     botocore \
     fiona \
@@ -49,9 +51,10 @@ RUN conda install \
     pyproj \
     regex \
     rtree \
-    shapely \
     s3fs \
+    shapely \
     tqdm \
+    ujson \
     vega_datasets \
     xmltodict
 
