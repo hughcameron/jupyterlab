@@ -31,7 +31,6 @@ RUN jupyter labextension install \
 RUN conda install \
     aiohttp \
     altair \
-    asyncio \
     boto3 \
     botocore \
     fiona \
@@ -59,6 +58,7 @@ RUN conda install \
     xmltodict
 
 RUN pip install \
+    asyncio \
     ballpark \
     chartify \
     # chromedriver_installer \
