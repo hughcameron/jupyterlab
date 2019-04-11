@@ -3,7 +3,7 @@ FROM jupyter/all-spark-notebook:latest
 
 # JupyterLab GIT extension: 
 RUN jupyter labextension install @jupyterlab/git && \
-    pip install jupyterlab-git && \
+    pip install jupyterlab_code_formatter jupyterlab-git && \
     jupyter serverextension enable --py --sys-prefix jupyterlab_git
 
 # JupyterLab extensions: 
@@ -20,12 +20,15 @@ RUN jupyter labextension install \
     @jupyterlab/github \
     @jupyterlab/vega2-extension \
     # @jpmorganchase/perspective-jupyterlab \
+    @ryantam626/jupyterlab_code_formatter \
     beakerx-jupyterlab \
     @jupyterlab/toc \
     bqplot \
     jupyterlab-kernelspy \
     qgrid \
     knowledgelab
+
+RUN jupyter serverextension enable --py jupyterlab_code_formatter
 
 # various further data science libraries
 RUN conda install \
