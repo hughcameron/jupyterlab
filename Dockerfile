@@ -63,9 +63,6 @@ RUN conda install \
 RUN pip install \
     asyncio \
     ballpark \
-    chartify \
-    # chromedriver_installer \
-    createsend \
+    dx \
     flanker \
-    rgeocoder \
     git+https://github.com/hughcameron/summer.git --upgrade
