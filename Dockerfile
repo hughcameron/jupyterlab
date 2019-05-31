@@ -36,6 +36,7 @@ RUN conda install \
     altair \
     boto3 \
     botocore \
+    cufflinks-py \
     fiona \
     folium \
     geopandas \
