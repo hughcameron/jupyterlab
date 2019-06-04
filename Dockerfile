@@ -19,7 +19,7 @@ USER $NB_UID
 RUN jupyter labextension install \
     @jupyterlab/github \
     @jupyterlab/vega2-extension \
-    # @jpmorganchase/perspective-jupyterlab \
+    jupyter labextension install @finos/perspective-jupyterlab \
     @ryantam626/jupyterlab_code_formatter \
     beakerx-jupyterlab \
     @jupyterlab/toc \
@@ -36,7 +36,6 @@ RUN conda install \
     altair \
     boto3 \
     botocore \
-    cufflinks-py \
     fiona \
     folium \
     geopandas \
@@ -64,6 +63,7 @@ RUN conda install \
 RUN pip install \
     asyncio \
     ballpark \
-    dx \
     flanker \
+    pandas_bokeh \
+    perspective-python \
     git+https://github.com/hughcameron/summer.git --upgrade
