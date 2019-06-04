@@ -32,8 +32,10 @@ RUN jupyter serverextension enable --py jupyterlab_code_formatter
 
 # various further data science libraries
 RUN conda install \
+    aiofiles \
     aiohttp \
     altair \
+    asyncpg \
     boto3 \
     botocore \
     fiona \
