@@ -19,14 +19,14 @@ USER $NB_UID
 RUN jupyter labextension install \
     @jupyterlab/github \
     @jupyterlab/vega2-extension \
-    jupyter labextension install @finos/perspective-jupyterlab \
+    @finos/perspective-jupyterlab \
     @ryantam626/jupyterlab_code_formatter \
-    beakerx-jupyterlab \
+    # beakerx-jupyterlab \
     @jupyterlab/toc \
-    bqplot \
-    jupyterlab-kernelspy \
-    qgrid \
-    knowledgelab
+    # bqplot \
+    jupyterlab-kernelspy
+    # qgrid \
+    # knowledgelab
 
 RUN jupyter serverextension enable --py jupyterlab_code_formatter
 
