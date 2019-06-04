@@ -22,9 +22,9 @@ RUN jupyter labextension install \
     @finos/perspective-jupyterlab \
     @ryantam626/jupyterlab_code_formatter \
     # beakerx-jupyterlab \
-    @jupyterlab/toc \
+    @jupyterlab/toc
     # bqplot \
-    jupyterlab-kernelspy
+    # @jupyterlab-kernelspy
     # qgrid \
     # knowledgelab
 
