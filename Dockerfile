@@ -43,13 +43,13 @@ RUN conda install \
     geopandas \
     geopy \
     ipywidgets \
-    # matplotlib-venn \
+    matplotlib-venn \
     nameparser \
     nodejs \
     pandasql \
     phonenumbers \
     psycopg2 \
-    pyicu \
+    # pyicu \
     pymapd \
     pymysql \
     pyproj \
