@@ -43,7 +43,7 @@ RUN conda install \
     geopandas \
     geopy \
     ipywidgets \
-    matplotlib-venn \
+    # matplotlib-venn \
     nameparser \
     nodejs \
     pandasql \
