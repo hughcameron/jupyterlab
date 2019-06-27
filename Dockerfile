@@ -25,12 +25,13 @@ RUN jupyter labextension install \
     @jupyterlab/vega2-extension \
     @finos/perspective-jupyterlab \
     @ryantam626/jupyterlab_code_formatter \
+    @pyviz/jupyterlab_pyviz
     # beakerx-jupyterlab \
-    @jupyterlab/toc
-# bqplot \
-# @jupyterlab-kernelspy
-# qgrid \
-# knowledgelab
+    # @jupyterlab/toc
+    # bqplot \
+    # @jupyterlab-kernelspy
+    # qgrid \
+    # knowledgelab
 
 RUN jupyter serverextension enable --py jupyterlab_code_formatter
 
