@@ -11,6 +11,10 @@ RUN conda install --quiet --yes -c conda-forge ipywidgets
 
 USER root
 
+RUN mkdir /.vscode 
+COPY settings.json /.vscode/settings.json
+RUN chown jovyan:users -R /.vscode
+
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 RUN chmod a+r /usr/local/spark/jars/*
 
@@ -23,10 +27,10 @@ RUN jupyter labextension install \
     @ryantam626/jupyterlab_code_formatter \
     # beakerx-jupyterlab \
     @jupyterlab/toc
-    # bqplot \
-    # @jupyterlab-kernelspy
-    # qgrid \
-    # knowledgelab
+# bqplot \
+# @jupyterlab-kernelspy
+# qgrid \
+# knowledgelab
 
 RUN jupyter serverextension enable --py jupyterlab_code_formatter
 
@@ -42,6 +46,7 @@ RUN conda install \
     folium \
     geopandas \
     geopy \
+    hvplot \
     ipywidgets \
     matplotlib-venn \
     nameparser \
@@ -50,6 +55,7 @@ RUN conda install \
     phonenumbers \
     psycopg2 \
     # pyicu \
+    pylint \
     pymapd \
     pymysql \
     pyproj \
@@ -60,7 +66,8 @@ RUN conda install \
     tqdm \
     ujson \
     vega_datasets \
-    xmltodict
+    xmltodict \
+    yapf
 
 RUN pip install \
     asyncio \
@@ -69,3 +76,5 @@ RUN pip install \
     pandas_bokeh \
     perspective-python \
     git+https://github.com/hughcameron/summer.git --upgrade
+
+RUN jupyter lab build
