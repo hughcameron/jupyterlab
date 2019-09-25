@@ -40,6 +40,12 @@
         "home/jovyan/.profile/": true,
         "home/jovyan/.vscode-server/": true,
         "home/jovyan/.yarn/": true,
-        "home/jovyan/work": true,
+        "home/jovyan/.bash_history/": true,
+        "home/jovyan/.bash_logout/": true,
+        "home/jovyan/.bashrc/": true,
+        "home/jovyan/.ipynb_checkpoints/": true,
+        "home/jovyan/.ivy2/": true,
+        "home/jovyan/.pylint.d/": true,
+        "home/jovyan/seaborn-data/": true,
     }
 }
