@@ -8,6 +8,7 @@ FROM continuumio/anaconda3:latest
 
 # JupyterLab extensions: 
 RUN conda install --quiet --yes -c conda-forge ipywidgets
+RUN conda config --add channels conda-forge
 
 RUN mkdir /.vscode 
 COPY settings.json /.vscode/settings.json
