@@ -2,9 +2,9 @@
 FROM continuumio/anaconda3:latest
 
 # JupyterLab GIT extension: 
-RUN jupyter labextension install @jupyterlab/git && \
-    pip install jupyterlab-git && \
-    jupyter serverextension enable --py --sys-prefix jupyterlab_git
+# RUN jupyter labextension install @jupyterlab/git && \
+#     pip install jupyterlab-git && \
+#     jupyter serverextension enable --py --sys-prefix jupyterlab_git
 
 # JupyterLab extensions: 
 RUN conda install --quiet --yes -c conda-forge ipywidgets
@@ -17,8 +17,8 @@ ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/
 RUN chmod a+r /usr/local/spark/jars/*
 
 RUN jupyter labextension install \
-    @jupyterlab/github \
-    @pyviz/jupyterlab_pyviz \
+    # @jupyterlab/github \
+    # @pyviz/jupyterlab_pyviz \
     dask-labextension
 
 # various further data science libraries
