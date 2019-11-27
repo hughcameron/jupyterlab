@@ -11,7 +11,7 @@ RUN conda install --quiet --yes -c conda-forge ipywidgets
 
 RUN mkdir /.vscode 
 COPY settings.json /.vscode/settings.json
-RUN chown jovyan:users -R /.vscode
+# RUN chown jovyan:users -R /.vscode
 
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 RUN chmod a+r /usr/local/spark/jars/*
