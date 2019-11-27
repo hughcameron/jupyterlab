@@ -1,15 +1,13 @@
 # Start from a core stack version
-FROM jupyter/all-spark-notebook:latest
+FROM continuumio/anaconda3:latest
 
 # JupyterLab GIT extension: 
 RUN jupyter labextension install @jupyterlab/git && \
-    pip install jupyterlab_code_formatter jupyterlab-git && \
+    pip install jupyterlab-git && \
     jupyter serverextension enable --py --sys-prefix jupyterlab_git
 
 # JupyterLab extensions: 
 RUN conda install --quiet --yes -c conda-forge ipywidgets
-
-USER root
 
 RUN mkdir /.vscode 
 COPY settings.json /.vscode/settings.json
@@ -18,22 +16,10 @@ RUN chown jovyan:users -R /.vscode
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 RUN chmod a+r /usr/local/spark/jars/*
 
-USER $NB_UID
-
 RUN jupyter labextension install \
     @jupyterlab/github \
-    @jupyterlab/vega2-extension \
-    @finos/perspective-jupyterlab \
-    @ryantam626/jupyterlab_code_formatter \
-    @pyviz/jupyterlab_pyviz
-    # beakerx-jupyterlab \
-    # @jupyterlab/toc
-    # bqplot \
-    # @jupyterlab-kernelspy
-    # qgrid \
-    # knowledgelab
-
-RUN jupyter serverextension enable --py jupyterlab_code_formatter
+    @pyviz/jupyterlab_pyviz \
+    dask-labextension
 
 # various further data science libraries
 RUN conda install \
@@ -55,7 +41,7 @@ RUN conda install \
     pandasql \
     phonenumbers \
     psycopg2 \
-    # pyicu \
+    pyicu \
     pylint \
     pymapd \
     pymysql \
@@ -78,4 +64,6 @@ RUN pip install \
     perspective-python \
     git+https://github.com/hughcameron/summer.git --upgrade
 
-RUN jupyter lab build
+WORKDIR /workspace
+CMD jupyter-lab --no-browser \
+    --port=8080 --ip=0.0.0.0 --allow-root
