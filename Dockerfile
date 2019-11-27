@@ -37,7 +37,7 @@ RUN conda install \
     pandasql \
     phonenumbers \
     psycopg2 \
-    pyicu \
+    # pyicu \
     pylint \
     pymapd \
     pymysql \
@@ -61,9 +61,9 @@ RUN pip install \
     asyncio \
     ballpark \
     flanker \
-    pandas_bokeh \
-    perspective-python \
-    git+https://github.com/hughcameron/summer.git --upgrade
+    pandas_bokeh
+    # perspective-python \
+    # git+https://github.com/hughcameron/summer.git --upgrade
 
 WORKDIR /workspace
 CMD jupyter-lab --no-browser \
