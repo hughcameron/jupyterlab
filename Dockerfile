@@ -16,11 +16,6 @@ COPY settings.json /.vscode/settings.json
 # ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 # RUN chmod a+r /usr/local/spark/jars/*
 
-RUN jupyter labextension install \
-    # @jupyterlab/github \
-    # @pyviz/jupyterlab_pyviz \
-    dask-labextension
-
 # various further data science libraries
 RUN conda install \
     aiofiles \
@@ -55,6 +50,11 @@ RUN conda install \
     vega_datasets \
     xmltodict \
     yapf
+
+RUN jupyter labextension install \
+    # @jupyterlab/github \
+    # @pyviz/jupyterlab_pyviz \
+    dask-labextension
 
 RUN pip install \
     asyncio \
