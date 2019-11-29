@@ -1,5 +1,0 @@
-conda install -c conda-forge altair boto3 botocore fiona folium geopandas geopy ipywidgets matplotlib-venn nameparser nodejs pandasql phonenumbers psycopg2 pyicu pymysql pyproj qgrid regex rtree shapely s3fs tqdm vega_datasets xmltodict -y
-
-pip install ballpark chartify createsend flanker rgeocoder git+https://github.com/hughcameron/summer.git --upgrade
-
-conda install -c conda-forge boto3 botocore -y
