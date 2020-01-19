@@ -8,9 +8,11 @@ dependencies:
   - aiofiles=0.4.0=py_1001
   - aiohttp=3.6.2=py37h516909a_0
   - alembic=1.3.2=py_0
-  - altair=4.0.0=py_0
+  - altair=4.0.1=py_0
   - arrow-cpp=0.13.0=py37h6b969ab_7
-  - astroid=2.3.3=py37_0
+  - asn1crypto=1.3.0=py37_0
+  - astroid=2.3.3=py37_1
+  - async-timeout=3.0.1=py_1000
   - async_generator=1.10=py_0
   - async-timeout=3.0.1=py_1000
   - asyncpg=0.20.1=py37h516909a_0
@@ -23,8 +25,8 @@ dependencies:
   - blosc=1.17.0=he1b5a44_1
   - bokeh=1.4.0=py37_0
   - boost-cpp=1.70.0=h8e57a91_2
-  - boto3=1.11.1=py_0
-  - botocore=1.14.1=py_0
+  - boto3=1.11.5=py_0
+  - botocore=1.14.5=py_0
   - branca=0.3.1=py_0
   - brotli=1.0.7=he1b5a44_1000
   - bzip2=1.0.8=h516909a_2
@@ -36,28 +38,31 @@ dependencies:
   - cfitsio=3.470=hb60a0a2_2
   - chardet=3.0.4=py37_1003
   - cld2-cffi=0.1.4=py37he1b5a44_1000
-  - click-plugins=1.1.1=py_0
   - click=7.0=py_0
+  - click-plugins=1.1.1=py_0
   - cligj=0.5.0=py_0
   - cloudpickle=1.2.2=py_1
   - colorcet=2.0.1=py_0
   - conda-package-handling=1.6.0=py37h516909a_1
   - conda=4.7.12=py37_0
   - configurable-http-proxy=4.2.0=node13_he01fd0c_2
+  - croniter=0.3.30=py_0
   - cryptography=2.8=py37h72c5cf5_1
   - curl=7.65.3=hf8cf82a_0
   - cycler=0.10.0=py_2
   - cytoolz=0.10.1=py37h516909a_0
-  - dask-core=2.9.1=py_0
+  - dask=2.9.2=py_0
+  - dask-core=2.9.2=py_0
   - dask-labextension=1.1.0=py_0
-  - dask=2.9.1=py_0
   - dbus=1.13.6=he372182_0
   - decorator=4.4.1=py_0
   - defusedxml=0.6.0=py_0
-  - distributed=2.9.1=py_0
+  - distributed=2.9.3=py_0
+  - docker-py=4.1.0=py37_1
+  - docker-pycreds=0.4.0=py_0
   - docutils=0.15.2=py37_0
   - double-conversion=3.1.5=he1b5a44_2
-  - elasticsearch=7.1.0=py_0
+  - elasticsearch=7.5.1=py_0
   - entrypoints=0.3=py37_1000
   - expat=2.2.5=he1b5a44_1004
   - fastparquet=0.3.2=py37hc1659b7_0
@@ -95,8 +100,8 @@ dependencies:
   - idna=2.8=py37_1000
   - importlib_metadata=1.4.0=py37_0
   - ipykernel=5.1.3=py37h5ca1d4c_0
-  - ipython_genutils=0.2.0=py_1
   - ipython=7.11.1=py37h5ca1d4c_0
+  - ipython_genutils=0.2.0=py_1
   - ipywidgets=7.5.1=py_0
   - isort=4.3.21=py37_0
   - jedi=0.15.2=py37_0
@@ -106,12 +111,12 @@ dependencies:
   - json-c=0.13.1=h14c3975_1001
   - json5=0.8.5=py_0
   - jsonschema=3.2.0=py37_0
+  - jupyter-server-proxy=1.2.0=py_0
   - jupyter_client=5.3.4=py37_1
   - jupyter_core=4.6.1=py37_0
-  - jupyter-server-proxy=1.2.0=py_0
   - jupyterhub=1.0.0=py37_0
+  - jupyterlab=1.2.5=py_0
   - jupyterlab_server=1.0.6=py_0
-  - jupyterlab=1.2.4=py_0
   - kealib=1.4.10=h58c409b_1005
   - kiwisolver=1.1.0=py37hc9558a2_0
   - krb5=1.16.4=h2fd8d38_0
@@ -155,21 +160,23 @@ dependencies:
   - libxml2=2.9.10=hee79883_0
   - llvmlite=0.31.0=py37h8b12597_0
   - locket=0.2.0=py_2
-  - lz4-c=1.8.3=he1b5a44_1001
   - lz4=3.0.2=py37hd79334b_0
+  - lz4-c=1.8.3=he1b5a44_1001
   - mako=1.1.0=py_0
   - markupsafe=1.1.1=py37h516909a_0
+  - marshmallow=3.2.1=py_0
+  - marshmallow-oneofschema=2.0.1=py_0
+  - matplotlib=3.1.2=py37_1
   - matplotlib-base=3.1.2=py37h250f245_1
   - matplotlib-venn=0.11.5=py_1
-  - matplotlib=3.1.2=py37_1
   - mccabe=0.6.1=py_1
   - mistune=0.8.4=py37h516909a_1000
   - more-itertools=8.1.0=py_0
   - msgpack-python=0.6.2=py37hc9558a2_0
   - multidict=4.7.3=py37h516909a_0
   - munch=2.5.0=py_0
-  - mypy_extensions=0.4.3=py37_0
   - mypy=0.761=py_0
+  - mypy_extensions=0.4.3=py37_0
   - nameparser=1.0.5=py_0
   - nbconvert=5.6.1=py37_0
   - nbformat=5.0.3=py_0
@@ -177,7 +184,7 @@ dependencies:
   - netifaces=0.10.9=py37h516909a_1000
   - nodejs=13.6.0=h10a4023_0
   - nomkl=3.0=0
-  - notebook=6.0.1=py37_0
+  - notebook=6.0.2=py37_0
   - nspr=4.24=he1b5a44_0
   - nss=3.47=he751ad9_0
   - numba=0.47.0=py37hb3f55d8_0
@@ -199,6 +206,7 @@ dependencies:
   - partd=1.1.0=py_0
   - patsy=0.5.1=py_0
   - pcre=8.43=he1b5a44_0
+  - pendulum=2.0.5=py37_0
   - pexpect=4.7.0=py37_0
   - phonenumbers=8.10.14=py_0
   - pickleshare=0.7.5=py37_1000
@@ -207,9 +215,10 @@ dependencies:
   - pixman=0.38.0=h516909a_1003
   - pluggy=0.12.0=py_0
   - ply=3.11=py_1
-  - poppler-data=0.4.9=1
   - poppler=0.67.0=h14e79db_8
+  - poppler-data=0.4.9=1
   - postgresql=11.5=hc63931a_2
+  - prefect=0.9.0=py_0
   - proj=6.2.1=hc80f0dc_0
   - prometheus_client=0.7.1=py_0
   - prompt_toolkit=3.0.2=py_0
@@ -222,9 +231,10 @@ dependencies:
   - pycodestyle=2.5.0=py_0
   - pycosat=0.6.3=py37h516909a_1002
   - pycparser=2.19=py37_1
-  - pyct-core=0.4.6=py_0
   - pyct=0.4.6=py_0
-  - pycurl=7.43.0.3=py37h16ce93b_1
+  - pyct-core=0.4.6=py_0
+  - pycurl=7.43.0.4=py37h16ce93b_0
+  - pyct=0.4.6=py_0
   - pydocstyle=5.0.2=py_0
   - pyflakes=2.1.1=py_0
   - pygments=2.5.2=py_0
@@ -244,12 +254,14 @@ dependencies:
   - python-dateutil=2.8.1=py_0
   - python-editor=1.0.4=py_0
   - python-graphviz=0.13.2=py_0
-  - python-jsonrpc-server=0.3.2=py_0
-  - python-language-server=0.31.4=py37_0
+  - python-jsonrpc-server=0.3.3=py_0
+  - python-language-server=0.31.5=py37_0
+  - python-slugify=1.2.6=py_0
   - python=3.7.3=h33d41f4_1
   - pytz=2019.3=py_0
+  - pytzdata=2019.3=py_0
   - pyviz_comms=0.7.2=py_0
-  - pyyaml=5.3=py37h516909a_0
+  - pyyaml=5.2=py37h516909a_0
   - pyzmq=18.1.1=py37h1768529_0
   - qt=5.12.5=hd8c4c69_1
   - rbc=0.2.0dev0=py37_0
@@ -261,14 +273,14 @@ dependencies:
   - rtree=0.9.3=py37h7b0cdae_0
   - ruamel_yaml=0.15.80=py37h516909a_1000
   - s3fs=0.4.0=py_0
-  - s3transfer=0.3.0=py37_0
+  - s3transfer=0.3.1=py37_0
   - scipy=1.4.1=py37h921218d_0
   - seaborn=0.9.0=py_2
   - send2trash=1.5.0=py_0
   - setuptools=45.0.0=py37_1
   - shapely=1.6.4=py37hec07ddf_1006
   - simpervisor=0.3=py_1
-  - six=1.13.0=py37_0
+  - six=1.14.0=py37_0
   - snappy=1.1.7=he1b5a44_1003
   - snowballstemmer=2.0.0=py_0
   - sortedcontainers=2.1.0=py_0
@@ -281,12 +293,13 @@ dependencies:
   - tenacity=6.0.0=py37_0
   - terminado=0.8.3=py37_0
   - testpath=0.4.4=py_0
-  - thrift-cpp=0.12.0=hf3afdfd_1004
   - thrift=0.11.0=py37he1b5a44_1001
+  - thrift-cpp=0.12.0=hf3afdfd_1004
   - thriftpy2=0.4.10=py37h516909a_0
   - tiledb=1.6.2=h69c774e_1
   - tini=0.18.0=h14c3975_1001
   - tk=8.6.10=hed695b0_0
+  - toml=0.10.0=py_0
   - toolz=0.10.0=py_0
   - tornado=6.0.3=py37h516909a_0
   - tqdm=4.41.1=py_0
@@ -295,11 +308,13 @@ dependencies:
   - typing_extensions=3.7.4.1=py37_0
   - tzcode=2019a=h516909a_1002
   - ujson=1.35=py37h516909a_1001
+  - unidecode=1.1.1=py_0
   - urllib3=1.25.7=py37_0
   - vega_datasets=0.8.0=py_0
   - vincent=0.4.4=py_1
   - wcwidth=0.1.8=py_0
   - webencodings=0.5.1=py_1
+  - websocket-client=0.57.0=py37_0
   - wheel=0.33.6=py37_0
   - widgetsnbextension=3.5.1=py37_0
   - wrapt=1.11.2=py37h516909a_0
@@ -325,11 +340,11 @@ dependencies:
   - yarl=1.3.0=py37h516909a_1000
   - zeromq=4.3.2=he1b5a44_2
   - zict=1.0.0=py_0
-  - zipp=0.6.0=py_0
+  - zipp=1.0.0=py_0
   - zlib=1.2.11=h516909a_1006
   - zstd=1.4.0=h3b9ef0a_0
   - pip:
-    - altair-pandas==0.1.0.dev0
+    - git+https://github.com/altair-viz/altair_pandas
     - appdirs==1.4.3
     - asyncio==3.4.3
     - ballpark==1.4.0
