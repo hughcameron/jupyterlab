@@ -1,8 +1,8 @@
 
 FROM jupyter/pyspark-notebook
 
-# ADD environment.yml /tmp/environment.yml
-# RUN conda env update --name base -f /tmp/environment.yml
+ADD environment.yml /tmp/environment.yml
+RUN conda env update --name base -f /tmp/environment.yml
 
 USER root
 RUN mkdir /.vscode
