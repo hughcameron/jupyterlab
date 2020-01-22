@@ -342,7 +342,6 @@ dependencies:
   - zict=1.0.0=py_0
   - zipp=1.0.0=py_0
   - zlib=1.2.11=h516909a_1006
-  - zstd=1.4.0=h3b9ef0a_0
   - pip:
     - git+https://github.com/altair-viz/altair_pandas
     - appdirs==1.4.3
