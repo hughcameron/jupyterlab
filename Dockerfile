@@ -4,13 +4,13 @@ FROM jupyter/pyspark-notebook
 ADD environment.yml /tmp/environment.yml
 RUN conda env update --name base -f /tmp/environment.yml
 
-ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
-RUN chmod a+r /usr/local/spark/jars/*
-
 USER root
 RUN mkdir /.vscode
 COPY settings.json /.vscode/settings.json
 RUN chown jovyan:users -R /.vscode
+
+ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
+RUN chmod a+r /usr/local/spark/jars/*
 
 USER $NB_USER
 
