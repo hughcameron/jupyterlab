@@ -55,6 +55,7 @@ dependencies:
   - entrypoints=0.3=py37_1000
   - expat=2.2.6=he6710b0_0
   - fastcache=1.1.0=py37h516909a_0
+  - fastparquet=0.3.2=py37hc1659b7_0
   - fiona=1.8.13=py37h900e953_0
   - folium=0.10.1=py_0
   - fontconfig=2.13.0=h9420a91_0
@@ -244,6 +245,7 @@ dependencies:
   - tenacity=6.0.0=py37_0
   - terminado=0.8.3=py37_0
   - testpath=0.4.4=py_0
+  - thrift=0.11.0=py37he1b5a44_1001
   - thrift-cpp=0.11.0=h02b749d_3
   - tiledb=1.6.3=h1fb8f14_0
   - tini=0.18.0=h14c3975_1001
