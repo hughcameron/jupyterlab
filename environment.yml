@@ -269,7 +269,7 @@ dependencies:
   - sortedcontainers=2.1.0=py_0
   - soupsieve=1.9.4=py37_0
   - sqlalchemy=1.3.13=py37h516909a_0
-  - sqlite=3.31.1=h7b6447c_0
+  # - sqlite=3.31.1=h7b6447c_0
   - statsmodels=0.11.1=py37h516909a_0
   - structlog=20.1.0=py_0
   - sympy=1.5.1=py37_1
