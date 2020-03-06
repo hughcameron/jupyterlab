@@ -22,7 +22,7 @@ python-dotenv
 black
 pylint
 prefect
-psycopg2
+# psycopg2
 pyarrow
 pyathena
 pyicu
