@@ -5,8 +5,8 @@ FROM jupyter/pyspark-notebook
 # RUN conda env update --name base -f /tmp/environment.yml
 # RUN conda update --all -y
 
-ADD requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
+# ADD requirements.txt /tmp/requirements.txt
+# RUN pip install -r /tmp/requirements.txt
 
 USER root
 RUN mkdir /.vscode
