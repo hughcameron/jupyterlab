@@ -1,12 +1,9 @@
 
 FROM jupyter/pyspark-notebook
 
-# ADD environment.yml /tmp/environment.yml
-# RUN conda env update --name base -f /tmp/environment.yml
-# RUN conda update --all -y
-
-# ADD requirements.txt /tmp/requirements.txt
-# RUN pip install -r /tmp/requirements.txt
+ADD environment.yml /tmp/environment.yml
+RUN conda env update --name base -f /tmp/environment.yml
+RUN conda update --all -y
 
 USER root
 RUN mkdir /.vscode
