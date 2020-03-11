@@ -1,41 +1,38 @@
-name: base
 channels:
-  - conda-forge
-  - defaults
+- conda-forge
+- defaults
 dependencies:
-  - aiohttp=3.6.2=py37h516909a_0
-  - altair=4.0.1=py_0
-  - black=19.10b0=py37_0
-  - boto3=1.12.14=py_0
-  - botocore=1.15.14=py_0
-  - dask=2.11.0=py_0
-  - fiona=1.8.13=py37h900e953_0
-  - folium=0.10.1=py_0
-  - geopandas=0.7.0=py_1
-  - matplotlib-venn=0.11.5=py_2
-  - nameparser=1.0.5=py_0
-  - nodejs=12.4.0=he1b5a44_0
-  - phonenumbers=8.10.14=py_0
-  - psycopg2=2.8.2=py37h72c5cf5_0
-  - pyathena=1.10.2=py_0
-  - pylint=2.4.4=py37_0
-  - pyproj=2.4.2.post1=py37h12732c1_0
-  - python-dotenv=0.12.0=py_0
-  - s3fs=0.4.0=py_0
-  - shapely=1.7.0=py37h5d51c17_0
-  - structlog=20.1.0=py_0
-  - tqdm=4.43.0=py_0
-  - ujson=1.35=py37h516909a_1001
-  - vega_datasets=0.8.0=py_0
-  - xmltodict=0.12.0=py_0
-  - pip:
-    - git+https://github.com/altair-viz/altair_pandas
-    - asana
-    - asyncio
-    - slackclient
-    - nest_asyncio
+- aiohttp=3.6.2=py37h516909a_0
+- altair=4.0.1=py_0
+- black=19.10b0=py37_0
+- boto3=1.12.18=pyh8c360ce_0
+- botocore=1.15.18=pyh8c360ce_0
+- dask=2.12.0=py_0
+- fiona=1.8.13=py37h900e953_0
+- folium=0.10.1=py_0
+- geopandas=0.7.0=py_1
+- matplotlib-venn=0.11.5=py_2
+- nameparser=1.0.5=py_0
+- nodejs=13.9.0=h10a4023_0
+- phonenumbers=8.10.14=py_0
+- prefect=0.9.7=py_0
+- psycopg2=2.8.4=py37h72c5cf5_1
+- pyathena=1.10.2=py_0
+- pylint=2.4.4=py37_0
+- pyproj=2.5.0=py37he3cd046_1
+- python-dotenv=0.12.0=py_0
+- s3fs=0.4.0=py_0
+- shapely=1.7.0=py37h5d51c17_0
+- structlog=20.1.0=py_0
+- tqdm=4.43.0=py_0
+- ujson=2.0.1=py37he1b5a44_0
+- vega_datasets=0.8.0=py_0
+- xmltodict=0.12.0=py_0
+- pip:
+  - git+https://github.com/altair-viz/altair_pandas
+  - asana
+  - asyncio
+  - slackclient
+  - nest_asyncio
+name: base
 prefix: /opt/conda
-
-# failing conda packages:
-# - prefect=0.9.7=py_0
-# - pyarrow=0.11.1=py37hbbcf98d_1002
