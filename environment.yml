@@ -15,7 +15,6 @@ dependencies:
 - nameparser=1.0.5=py_0
 - nodejs=13.9.0=h10a4023_0
 - phonenumbers=8.10.14=py_0
-- prefect=0.9.7=py_0
 - psycopg2=2.8.4=py37h72c5cf5_1
 - pyathena=1.10.2=py_0
 - pylint=2.4.4=py37_0
@@ -32,6 +31,7 @@ dependencies:
   - git+https://github.com/altair-viz/altair_pandas
   - asana
   - asyncio
+  - prefect
   - slackclient
   - nest_asyncio
 name: base
