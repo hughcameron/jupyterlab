@@ -31,8 +31,10 @@ dependencies:
   - git+https://github.com/altair-viz/altair_pandas
   - asana
   - asyncio
+  - nest_asyncio
   - prefect
   - slackclient
-  - nest_asyncio
+  - tensorboard
+  - tensorflow
 name: base
 prefix: /opt/conda

@@ -5,6 +5,10 @@ ADD environment.yml /tmp/environment.yml
 RUN conda env update --name base -f /tmp/environment.yml
 RUN conda update --all -y
 
+RUN apt-get update && apt-get install -y \
+  tmux \
+  netdata
+
 USER root
 RUN mkdir /.vscode
 COPY settings.json /.vscode/settings.json
