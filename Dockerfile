@@ -9,7 +9,7 @@ USER root
 
 RUN apt-get update && apt-get install -y \
   tmux \
-  netdata
+  htop
 
 RUN mkdir /.vscode
 COPY settings.json /.vscode/settings.json

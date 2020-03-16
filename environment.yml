@@ -33,6 +33,7 @@ dependencies:
   - asyncio
   - nest_asyncio
   - prefect
+  - p2j
   - slackclient
   - tensorboard
   - tensorflow
