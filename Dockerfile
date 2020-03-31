@@ -7,9 +7,7 @@ RUN conda update --all -y
 
 USER root
 
-RUN apt-get update && apt-get install -y \
-  tmux \
-  htop
+RUN apt-get update && apt-get install -y tmux htop vim
 
 RUN mkdir /.vscode
 COPY settings.json /.vscode/settings.json
