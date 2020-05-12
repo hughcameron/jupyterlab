@@ -13,7 +13,8 @@ RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
     jupyterlab-system-monitor \
-    jupyterlab-topbar-extension
+    jupyterlab-topbar-extension \
+    jupyterlab-tailwind-theme
 
 RUN jupyter lab build
 
