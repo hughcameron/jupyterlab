@@ -11,8 +11,10 @@ dependencies:
 - fiona=1.8.13=py37h900e953_0
 - folium=0.10.1=py_0
 - geopandas=0.7.0=py_1
+- glom=19.10.0=py_0
 - matplotlib-venn=0.11.5=py_2
 - nameparser=1.0.5=py_0
+- nbresuse=0.3.3=py_0
 - nodejs=13.9.0=h10a4023_0
 - phonenumbers=8.10.14=py_0
 - psycopg2=2.8.4=py37h72c5cf5_1
