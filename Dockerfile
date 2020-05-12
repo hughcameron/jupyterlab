@@ -15,6 +15,7 @@ RUN jupyter labextension install \
     jupyterlab-git \
     jupyterlab-tailwind-theme \
     jupyterlab_sparkmonitor \
+    @krassowski/jupyterlab-lsp \
     @finos/perspective-jupyterlab
 
 RUN jupyter lab build

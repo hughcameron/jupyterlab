@@ -39,6 +39,7 @@ channels:
     - prefect
     - p2j
     - slackclient
+    - jupyter-lsp
     - jupyterlab-sparkmonitor
     - tensorboard
     - tensorflow
