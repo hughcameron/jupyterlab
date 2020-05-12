@@ -14,7 +14,8 @@ RUN jupyter labextension install \
     @jupyterlab/toc \
     jupyterlab-system-monitor \
     jupyterlab-topbar-extension \
-    jupyterlab-tailwind-theme
+    jupyterlab-tailwind-theme \
+    jupyterlab_spark
 
 RUN jupyter lab build
 
