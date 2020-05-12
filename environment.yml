@@ -14,7 +14,6 @@ dependencies:
   - glom
   - matplotlib-venn=0.11.5=py_2
   - nameparser=1.0.5=py_0
-  - nbresuse=0.3.3=py_0
   - nodejs=13.13.0=hf5d1a2b_0
   - phonenumbers=8.10.14=py_0
   - psycopg2=2.8.5=py37hb09aad4_1
@@ -35,9 +34,11 @@ dependencies:
       - asana
       - asyncio
       - nest_asyncio
+      - perspective-python
       - prefect
       - p2j
       - slackclient
+      - jupyterlab-sparkmonitor
       - tensorboard
       - tensorflow
 name: base

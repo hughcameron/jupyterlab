@@ -7,15 +7,15 @@ RUN conda update --all -y
 
 USER root
 
-RUN apt-get update && apt-get install -y tmux htop vim
+RUN apt-get update && apt-get install -y tmux htop vim git
 
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
-    jupyterlab-system-monitor \
-    jupyterlab-topbar-extension \
+    jupyterlab-git \
     jupyterlab-tailwind-theme \
-    jupyterlab_spark
+    jupyterlab_sparkmonitor \
+    @finos/perspective-jupyterlab
 
 RUN jupyter lab build
 
