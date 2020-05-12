@@ -15,8 +15,10 @@ RUN jupyter labextension install \
     jupyterlab-system-monitor \
     jupyterlab-topbar-extension
 
+RUN jupyter lab build
+
 RUN mkdir /.vscode
-COPY settings.json /.vscode/settings.json
+COPY vscode_settings.json /.vscode/settings.json
 RUN chown jovyan:users -R /.vscode
 
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
