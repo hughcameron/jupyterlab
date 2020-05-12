@@ -38,9 +38,9 @@ channels:
     - perspective-python
     - prefect
     - p2j
-    - python-language-server
+    # - python-language-server
     - slackclient
-    - jupyter-lsp
+    # - jupyter-lsp
     - jupyterlab-sparkmonitor
     - tensorboard
     - tensorflow

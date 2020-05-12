@@ -14,15 +14,15 @@ RUN jupyter labextension install \
     @jupyterlab/toc \
     jupyterlab-git \
     jupyterlab-tailwind-theme \
-    jupyterlab_sparkmonitor \
-    @krassowski/jupyterlab-lsp \
-    @finos/perspective-jupyterlab
+    jupyterlab_sparkmonitor
+    # @krassowski/jupyterlab-lsp \
+    # @finos/perspective-jupyterlab
 
 RUN jupyter lab build
 
-RUN apt-get install software-properties-common
-RUN add-apt-repository ppa:bashtop-monitor/bashtop
-RUN apt install bashtop
+# RUN apt-get install software-properties-common
+# RUN add-apt-repository ppa:bashtop-monitor/bashtop
+# RUN apt install bashtop
 
 RUN mkdir /.vscode
 COPY settings/theme.json /.vscode/settings.json
