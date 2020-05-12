@@ -19,6 +19,10 @@ RUN jupyter labextension install \
 
 RUN jupyter lab build
 
+RUN apt-get install software-properties-common
+RUN add-apt-repository ppa:bashtop-monitor/bashtop
+RUN apt install bashtop
+
 RUN mkdir /.vscode
 COPY settings/theme.json /.vscode/settings.json
 RUN chown jovyan:users -R /.vscode
