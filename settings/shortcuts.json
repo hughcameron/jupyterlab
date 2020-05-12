@@ -1,0 +1,11 @@
+{
+    "shortcuts": [
+                {
+            "command": "notebook:restart-run-all",
+            "keys": [
+                "Ctrl Shift O"
+            ],
+            "selector": "body"
+        }
+    ]
+}
