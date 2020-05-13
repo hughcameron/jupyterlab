@@ -14,7 +14,8 @@ RUN jupyter labextension install \
     @jupyterlab/toc \
     jupyterlab-tailwind-theme \
     jupyterlab-s3-browser \
-    @krassowski/jupyterlab-lsp
+    @krassowski/jupyterlab-lsp \
+    @ryantam626/jupyterlab_code_formatter
     # @finos/perspective-jupyterlab
 
 RUN jupyter serverextension enable --py jupyterlab_git
