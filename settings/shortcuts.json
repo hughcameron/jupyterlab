@@ -1,9 +1,16 @@
 {
     "shortcuts": [
-                {
+        {
             "command": "notebook:restart-run-all",
             "keys": [
                 "Ctrl Shift O"
+            ],
+            "selector": "body"
+        },
+        {
+            "command": "terminal:create-new",
+            "keys": [
+                "Ctrl `"
             ],
             "selector": "body"
         }

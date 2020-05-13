@@ -30,10 +30,11 @@ RUN chown jovyan:users -R /.vscode
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 RUN chmod a+r /usr/local/spark/jars/*
 
-USER $NB_USER
-
 COPY settings/shortcuts.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension/shortcuts.jupyterlab-setting
 COPY settings/theme.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
 COPY settings/terminal.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/terminal-extension/plugin.jupyterlab-settings
+RUN chmod -R 777 /home/jovyan/
+
+USER $NB_USER
 
 CMD ["start.sh", "jupyter", "lab","--ip='*'", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.disable_check_xsrf=True", "--NotebookApp.token=''", "--notebook-dir=/home/jovyan"]
