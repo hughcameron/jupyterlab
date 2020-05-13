@@ -19,6 +19,7 @@ RUN jupyter labextension install \
     # @finos/perspective-jupyterlab
 
 RUN jupyter serverextension enable --py jupyterlab_git
+RUN jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
 
 RUN jupyter lab build
 
