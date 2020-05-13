@@ -16,6 +16,8 @@ RUN jupyter labextension install \
     # @krassowski/jupyterlab-lsp \
     # @finos/perspective-jupyterlab
 
+RUN jupyter serverextension enable --py jupyterlab_git
+
 RUN jupyter lab build
 
 # RUN apt-get install software-properties-common
