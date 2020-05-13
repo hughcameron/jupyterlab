@@ -12,8 +12,9 @@ RUN apt-get update && apt-get install -y tmux htop vim git
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
-    jupyterlab-tailwind-theme
-    # @krassowski/jupyterlab-lsp \
+    jupyterlab-tailwind-theme \
+    jupyterlab-s3-browser \
+    @krassowski/jupyterlab-lsp
     # @finos/perspective-jupyterlab
 
 RUN jupyter serverextension enable --py jupyterlab_git
@@ -31,7 +32,7 @@ RUN chown jovyan:users -R /.vscode
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
 RUN chmod a+r /usr/local/spark/jars/*
 
-COPY settings/shortcuts.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension/shortcuts.jupyterlab-setting
+COPY settings/shortcuts.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension/shortcuts.jupyterlab-settings
 COPY settings/theme.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
 COPY settings/terminal.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/terminal-extension/plugin.jupyterlab-settings
 RUN chmod -R 777 /home/jovyan/

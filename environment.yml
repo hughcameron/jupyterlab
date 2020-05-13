@@ -7,6 +7,7 @@ dependencies:
   - black=19.10b0=py37_0
   - boto3=1.13.6=pyh9f0ad1d_0
   - botocore=1.16.6=pyh9f0ad1d_0
+  - python-language-server=0.26.1=py37_0
   - dask=2.16.0=py_0
   - fiona=1.8.13=py37h0492a4a_1
   - folium=0.11.0=py_0
@@ -35,6 +36,8 @@ dependencies:
       - asana
       - asyncio
       - jupyterlab-git
+      - jupyterlab-s3-browser
+      - jupyter-lsp
       - nest_asyncio
       - prefect
       - p2j
