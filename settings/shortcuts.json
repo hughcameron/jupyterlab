@@ -3,9 +3,9 @@
         {
             "command": "notebook:restart-run-all",
             "keys": [
-                "Ctrl Shift O"
+                "Accel Shift O"
             ],
-            "selector": "body"
+            "selector": "[data-jp-kernel-user]:focus"
         },
         {
             "command": "terminal:create-new",
