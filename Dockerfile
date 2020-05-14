@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y tmux htop vim git
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
-    jupyterlab-execute-time \
+    jupyterlab-execute-time
     jupyterlab-tailwind-theme \
     jupyterlab-s3-browser \
     @krassowski/jupyterlab-lsp \
@@ -38,7 +38,7 @@ RUN chmod a+r /usr/local/spark/jars/*
 COPY settings/shortcuts.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension/shortcuts.jupyterlab-settings
 COPY settings/theme.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
 COPY settings/terminal.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/terminal-extension/plugin.jupyterlab-settings
- /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
+COPY settings/notebook.json /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
 RUN chmod -R 777 /home/jovyan/
 
 USER $NB_USER
