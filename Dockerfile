@@ -14,12 +14,13 @@ RUN jupyter labextension install \
     @jupyterlab/toc \
     jupyterlab-execute-time \
     jupyterlab-tailwind-theme \
+    jupyterlab_templates \
     jupyterlab-s3-browser \
     @krassowski/jupyterlab-lsp \
     @ryantam626/jupyterlab_code_formatter
     # @finos/perspective-jupyterlab
 
-RUN jupyter serverextension enable --py jupyterlab_git
+RUN jupyter serverextension enable --py jupyterlab_git jupyterlab_templates
 RUN jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
 
 RUN jupyter lab build
