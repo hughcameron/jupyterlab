@@ -58,3 +58,7 @@ services:
 Then run this command from the directory holding the file:
 
 `docker-compose up -d --build`
+
+# Current Issues:
+- LSP shows that it's partially initialized, console error `LSP: Connect timed out for python`. Same as [issue here](https://github.com/krassowski/jupyterlab-lsp/issues/255)
+- Perspective will not install whith error `... which use PEP 517 and cannot be installed directly`. [Same as issue here](https://github.com/finos/perspective/issues/1025)

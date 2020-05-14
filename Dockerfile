@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y tmux htop vim git
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
-    jupyterlab-execute-time
+    jupyterlab-execute-time \
     jupyterlab-tailwind-theme \
     jupyterlab-s3-browser \
     @krassowski/jupyterlab-lsp \
