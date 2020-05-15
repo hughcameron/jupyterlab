@@ -44,6 +44,7 @@ dependencies:
       - prefect
       - p2j
       - slackclient
+      - shopify-api
       - tensorboard
       - tensorflow
 name: base
