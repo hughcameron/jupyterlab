@@ -3,7 +3,7 @@ FROM jupyter/pyspark-notebook
 
 USER root
 
-RUN apt-get update && apt-get install -y tmux htop vim git cmake
+RUN apt-get update && apt-get install -y tmux htop vim git cmake libboost-all-dev
 
 COPY environment.yml /tmp/environment.yml
 RUN conda env update --name base -f /tmp/environment.yml
