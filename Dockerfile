@@ -1,13 +1,13 @@
 
 FROM jupyter/pyspark-notebook
 
-ADD environment.yml /tmp/environment.yml
-RUN conda env update --name base -f /tmp/environment.yml
-RUN conda update --all -y
-
 USER root
 
 RUN apt-get update && apt-get install -y tmux htop vim git cmake
+
+COPY environment.yml /tmp/environment.yml
+RUN conda env update --name base -f /tmp/environment.yml
+RUN conda update --all -y
 
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
@@ -19,6 +19,9 @@ RUN jupyter labextension install \
     @krassowski/jupyterlab-lsp \
     @ryantam626/jupyterlab_code_formatter \
     @finos/perspective-jupyterlab
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN find . | grep jupyterlab-tailwind-theme/style/index.css |  xargs -i sed -i 's/max-width: 1000px/max-width: 1200px/g' {}
 
 RUN jupyter serverextension enable --py jupyterlab_git jupyterlab_templates
 RUN jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
