@@ -9,6 +9,10 @@ COPY environment.yml /tmp/environment.yml
 RUN conda env update --name base -f /tmp/environment.yml
 RUN conda update --all -y
 
+# Install perspective after environment is setup
+RUN conda install pyarrow==0.15.1 -y
+RUN pip install perspective-python
+
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
@@ -20,6 +24,7 @@ RUN jupyter labextension install \
     @ryantam626/jupyterlab_code_formatter \
     @finos/perspective-jupyterlab
 
+# Increase the cell width set by the Tailwind theme
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN find . | grep jupyterlab-tailwind-theme/style/index.css |  xargs -i sed -i 's/max-width: 1000px/max-width: 1200px/g' {}
 

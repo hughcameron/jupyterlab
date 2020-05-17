@@ -25,7 +25,6 @@ dependencies:
   - pylint=2.5.2=py37hc8dfbb8_0
   - pyodbc=4.0.30=py37he1b5a44_0
   - pyproj=2.6.1.post1=py37h34dd122_0
-  - pyarrow=0.15.1=py37h8b68381_1
   - python-dotenv=0.13.0=pyh9f0ad1d_0
   - s3fs=0.4.2=py_0
   - shapely=1.7.0=py37hc88ce51_3
@@ -43,7 +42,6 @@ dependencies:
       - jupyter-lsp
       - nest_asyncio
       - prefect
-      - perspective-python
       - p2j
       - slackclient
       - shopify-api
