@@ -7,7 +7,7 @@ RUN conda update --all -y
 
 USER root
 
-RUN apt-get update && apt-get install -y tmux htop vim git
+RUN apt-get update && apt-get install -y tmux htop vim git cmake
 
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
@@ -17,17 +17,13 @@ RUN jupyter labextension install \
     jupyterlab_templates \
     jupyterlab-s3-browser \
     @krassowski/jupyterlab-lsp \
-    @ryantam626/jupyterlab_code_formatter
-    # @finos/perspective-jupyterlab
+    @ryantam626/jupyterlab_code_formatter \
+    @finos/perspective-jupyterlab
 
 RUN jupyter serverextension enable --py jupyterlab_git jupyterlab_templates
 RUN jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
 
 RUN jupyter lab build
-
-# RUN apt-get install software-properties-common
-# RUN add-apt-repository ppa:bashtop-monitor/bashtop
-# RUN apt install bashtop
 
 RUN mkdir /.vscode
 COPY settings/theme.json /.vscode/settings.json
