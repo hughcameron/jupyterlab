@@ -9,13 +9,13 @@ COPY environment.yml /tmp/environment.yml
 RUN conda env update --name base -f /tmp/environment.yml
 RUN conda update --all -y
 
-# Install boost perspective after environment is setup
-# Reference approach at: https://github.com/finos/perspective/blob/master/docker/python3/official/Dockerfile
-RUN wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz >/dev/null 2>&1
-RUN tar xfz boost_1_71_0.tar.gz
-# https://github.com/boostorg/build/issues/468
-RUN cd boost_1_71_0 && ./bootstrap.sh
-RUN cd boost_1_71_0 && ./b2 -j8 --with-program_options --with-filesystem --with-system install 
+# # Install boost perspective after environment is setup
+# # Reference approach at: https://github.com/finos/perspective/blob/master/docker/python3/official/Dockerfile
+# RUN wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz >/dev/null 2>&1
+# RUN tar xfz boost_1_71_0.tar.gz
+# # https://github.com/boostorg/build/issues/468
+# RUN cd boost_1_71_0 && ./bootstrap.sh
+# RUN cd boost_1_71_0 && ./b2 -j8 --with-program_options --with-filesystem --with-system install
 RUN conda install pyarrow==0.15.1 -y
 RUN pip install perspective-python
 
