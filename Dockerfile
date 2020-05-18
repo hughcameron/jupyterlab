@@ -30,7 +30,7 @@ RUN cd boost_1_71_0 && ./b2 -j8 --with-program_options --with-filesystem --with-
 
 
 RUN conda install pyarrow==0.15.1 -y
-# RUN pip install perspective-python
+RUN pip install perspective-python
 
 
 RUN jupyter labextension install \
