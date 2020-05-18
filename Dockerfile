@@ -1,13 +1,13 @@
 
 FROM jupyter/pyspark-notebook
 
-RUN apt-get update && apt-get install -y tmux htop vim git
-
 COPY environment.yml /tmp/environment.yml
 RUN conda env update --name base -f /tmp/environment.yml
 RUN conda update --all -y
 
 USER root
+
+RUN apt-get update && apt-get install -y tmux htop vim git
 
 # # Install cmake & boost perspective after environment is setup
 # # Reference approach at: https://github.com/finos/perspective/blob/master/docker/python3/official/Dockerfile
