@@ -11,7 +11,7 @@ RUN conda update --all -y
 ## LINUX PACKAGES ##
 USER root
 
-# SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y tmux htop vim git
 
 
@@ -29,8 +29,8 @@ RUN ln -s /opt/cmake/bin/ctest /usr/local/bin/ctest
 
 RUN wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz >/dev/null 2>&1
 RUN tar xfz boost_1_71_0.tar.gz
-RUN boost_1_71_0/bootstrap.sh
-RUN boost_1_71_0/b2 -j8 --with-program_options --with-filesystem --with-system install
+RUN cd boost_1_71_0 && ./bootstrap.sh
+RUN cd boost_1_71_0 && ./b2 -j8 --with-program_options --with-filesystem --with-system install
 RUN rm -rf boost_1_71_0.tar.gz boost_1_71_0
 
 RUN conda install pyarrow==0.15.1 -y
