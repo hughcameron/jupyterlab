@@ -11,7 +11,7 @@ RUN conda update --all -y
 ## LINUX PACKAGES ##
 USER root
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && apt-get install -y tmux htop vim git
 
 
