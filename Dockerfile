@@ -65,8 +65,17 @@ RUN chown jovyan:users -R /.vscode
 
 
 ## POSTGRES JDBC FOR SPARK ##
-ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar /usr/local/spark/jars
-RUN chmod a+r /usr/local/spark/jars/*
+ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar $SPARK_HOME/jars
+RUN chmod a+r $SPARK_HOME/jars/*
+
+## GRAPHFRAMES FOR SPARK ##
+RUN cd /tmp && \
+    wget --quiet http://dl.bintray.com/spark-packages/maven/graphframes/graphframes/0.8.0-spark3.0-s_2.12/graphframes-0.8.0-spark3.0-s_2.12.jar && \
+    cp graphframes-0.8.0-spark3.0-s_2.12.jar $SPARK_HOME/jars/ && \
+    unzip -qq graphframes-0.8.0-spark3.0-s_2.12.jar && \
+    cp -r graphframes $SPARK_HOME/python && \
+    rm graphframes-0.8.0-spark3.0-s_2.12.jar && \
+    rm -r graphframes
 
 
 ## PERSIST JUPYTERLAB SETTINGS ##
