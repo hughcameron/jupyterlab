@@ -41,13 +41,15 @@ RUN pip install perspective-python
 RUN jupyter labextension install \
     @jupyterlab/shortcutui \
     @jupyterlab/toc \
-    jupyterlab-execute-time \
-    jupyterlab-tailwind-theme \
     jupyterlab_templates \
+    jupyterlab-execute-time \
+    jupyterlab-plotly@4.8.0 \
     jupyterlab-s3-browser \
+    jupyterlab-tailwind-theme \
     # @krassowski/jupyterlab-lsp \
     @ryantam626/jupyterlab_code_formatter \
-    @finos/perspective-jupyterlab
+    @finos/perspective-jupyterlab \
+    plotlywidget@4.8.0
 
 # Increase the cell width set by the Tailwind theme
 RUN find . | grep jupyterlab-tailwind-theme/style/index.css |  xargs -i sed -i 's/max-width: 1000px/max-width: 1200px/g' {}

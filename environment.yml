@@ -42,6 +42,7 @@ dependencies:
       - jupyterlab-s3-browser
       - jupyter-lsp
       - nest_asyncio
+      - plotly-geo
       - prefect
       - p2j
       - slackclient
