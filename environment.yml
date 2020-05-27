@@ -7,7 +7,6 @@ dependencies:
   - black=19.10b0=py37_0
   - boto3=1.13.6=pyh9f0ad1d_0
   - botocore=1.16.6=pyh9f0ad1d_0
-  - python-language-server=0.26.1=py37_0
   - dask=2.16.0=py_0
   - fiona=1.8.13=py37h0492a4a_1
   - folium=0.11.0=py_0
@@ -20,12 +19,14 @@ dependencies:
   - nbresuse=0.3.3=py_0
   - nodejs=13.13.0=hf5d1a2b_0
   - phonenumbers=8.10.14=py_0
+  - plotly-4.8.0-pyh9f0ad1d_0
   - psycopg2=2.8.5=py37hb09aad4_1
   - pyathena=1.10.6=pyh9f0ad1d_0
   - pylint=2.5.2=py37hc8dfbb8_0
   - pyodbc=4.0.30=py37he1b5a44_0
   - pyproj=2.6.1.post1=py37h34dd122_0
   - python-dotenv=0.13.0=pyh9f0ad1d_0
+  - python-language-server=0.26.1=py37_0
   - s3fs=0.4.2=py_0
   - shapely=1.7.0=py37hc88ce51_3
   - structlog=20.1.0=py_0

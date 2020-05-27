@@ -68,6 +68,7 @@ RUN chown jovyan:users -R /.vscode
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar $SPARK_HOME/jars
 RUN chmod a+r $SPARK_HOME/jars/*
 
+
 ## GRAPHFRAMES FOR SPARK ##
 RUN cd /tmp && \
     wget --quiet http://dl.bintray.com/spark-packages/maven/graphframes/graphframes/0.8.0-spark3.0-s_2.12/graphframes-0.8.0-spark3.0-s_2.12.jar && \
