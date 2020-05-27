@@ -19,7 +19,7 @@ dependencies:
   - nbresuse=0.3.3=py_0
   - nodejs=13.13.0=hf5d1a2b_0
   - phonenumbers=8.10.14=py_0
-  - plotly-4.8.0-pyh9f0ad1d_0
+  - plotly=4.8.0=pyh9f0ad1d_0
   - psycopg2=2.8.5=py37hb09aad4_1
   - pyathena=1.10.6=pyh9f0ad1d_0
   - pylint=2.5.2=py37hc8dfbb8_0
