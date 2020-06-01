@@ -72,13 +72,13 @@ RUN chmod a+r $SPARK_HOME/jars/*
 
 
 ## GRAPHFRAMES FOR SPARK ##
-RUN cd /tmp && \
-    wget --quiet http://dl.bintray.com/spark-packages/maven/graphframes/graphframes/0.8.0-spark3.0-s_2.12/graphframes-0.8.0-spark3.0-s_2.12.jar && \
-    cp graphframes-0.8.0-spark3.0-s_2.12.jar $SPARK_HOME/jars/ && \
-    unzip -qq graphframes-0.8.0-spark3.0-s_2.12.jar && \
-    cp -r graphframes $SPARK_HOME/python && \
-    rm graphframes-0.8.0-spark3.0-s_2.12.jar && \
-    rm -r graphframes
+ENV GRAPHFRAMES_VERSION=0.8.0 \
+  SPARK_VERSION=2.4 \
+  SCALA_VERSION=2.11
+ENV GRAPHFRAMES_PACKAGE=${GRAPHFRAMES_VERSION}-spark${SPARK_VERSION}-s_${SCALA_VERSION}
+
+RUN ${SPARK_HOME}/bin/pyspark --packages graphframes:graphframes:${GRAPHFRAMES_PACKAGE}
+RUN wget http://dl.bintray.com/spark-packages/maven/graphframes/graphframes/${GRAPHFRAMES_PACKAGE}/graphframes-${GRAPHFRAMES_PACKAGE}.jar -qO ${SPARK_HOME}/jars/graphframes.jar
 
 
 ## PERSIST JUPYTERLAB SETTINGS ##

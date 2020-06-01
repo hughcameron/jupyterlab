@@ -35,18 +35,18 @@ dependencies:
   - vega_datasets=0.8.0=py_0
   - xmltodict=0.12.0=py_0
   - pip:
-      - git+https://github.com/altair-viz/altair_pandas
       - asana
       - asyncio
+      - graphframes
+      - jupyter-lsp
       - jupyterlab-git
       - jupyterlab-s3-browser
-      - jupyter-lsp
       - nest_asyncio
+      - p2j
       - plotly-geo
       - prefect
-      - p2j
-      - slackclient
       - shopify-api
+      - slackclient
       - tensorboard
       - tensorflow
 name: base
