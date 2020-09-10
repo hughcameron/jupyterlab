@@ -20,21 +20,21 @@ RUN apt-get update && apt-get install -y tmux htop vim git
 # The trick is to install cmake & boost after the conda environment is setup.
 # Using approach from: https://github.com/finos/perspective/blob/master/docker/python3/official/Dockerfile
 
-RUN wget https://cmake.org/files/v3.15/cmake-3.15.4-Linux-x86_64.sh -q
-RUN mkdir /opt/cmake
-RUN printf "y\nn\n" | sh cmake-3.15.4-Linux-x86_64.sh --prefix=/opt/cmake > /dev/null
-RUN rm -rf cmake*.sh /opt/cmake/doc /opt/cmake/bin/cmake-gui /opt/cmake/bin/ccmake /opt/cmake/bin/cpack
-RUN ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
-RUN ln -s /opt/cmake/bin/ctest /usr/local/bin/ctest
+# RUN wget https://cmake.org/files/v3.15/cmake-3.15.4-Linux-x86_64.sh -q
+# RUN mkdir /opt/cmake
+# RUN printf "y\nn\n" | sh cmake-3.15.4-Linux-x86_64.sh --prefix=/opt/cmake > /dev/null
+# RUN rm -rf cmake*.sh /opt/cmake/doc /opt/cmake/bin/cmake-gui /opt/cmake/bin/ccmake /opt/cmake/bin/cpack
+# RUN ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
+# RUN ln -s /opt/cmake/bin/ctest /usr/local/bin/ctest
 
-RUN wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz >/dev/null 2>&1
-RUN tar xfz boost_1_71_0.tar.gz
-RUN cd boost_1_71_0 && ./bootstrap.sh
-RUN cd boost_1_71_0 && ./b2 -j8 --with-program_options --with-filesystem --with-system install
-RUN rm -rf boost_1_71_0.tar.gz boost_1_71_0
+# RUN wget https://dl.bintray.com/boostorg/release/1.71.0/source/boost_1_71_0.tar.gz >/dev/null 2>&1
+# RUN tar xfz boost_1_71_0.tar.gz
+# RUN cd boost_1_71_0 && ./bootstrap.sh
+# RUN cd boost_1_71_0 && ./b2 -j8 --with-program_options --with-filesystem --with-system install
+# RUN rm -rf boost_1_71_0.tar.gz boost_1_71_0
 
-RUN conda install pyarrow==0.15.1 -y
-RUN pip install perspective-python
+# RUN conda install pyarrow==0.15.1 -y
+# RUN pip install perspective-python
 
 
 ## JUPYTERLAB EXTENSIONS ##
@@ -48,7 +48,7 @@ RUN jupyter labextension install \
     jupyterlab-tailwind-theme \
     # @krassowski/jupyterlab-lsp \
     @ryantam626/jupyterlab_code_formatter \
-    @finos/perspective-jupyterlab \
+    # @finos/perspective-jupyterlab \
     plotlywidget@4.8.0
 
 # Increase the cell width set by the Tailwind theme
