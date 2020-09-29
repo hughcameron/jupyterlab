@@ -54,7 +54,6 @@ RUN jupyter labextension install \
 # Increase the cell width set by the Tailwind theme
 RUN find . | grep jupyterlab-tailwind-theme/style/index.css |  xargs -i sed -i 's/max-width: 1000px/max-width: 1200px/g' {}
 
-RUN jupyter serverextension enable --py jupyterlab_git jupyterlab_templates
 RUN jupyter serverextension enable --py jupyterlab_code_formatter --sys-prefix
 
 RUN jupyter lab build
@@ -72,9 +71,9 @@ RUN chmod a+r $SPARK_HOME/jars/*
 
 
 ## GRAPHFRAMES FOR SPARK ##
-ENV GRAPHFRAMES_VERSION=0.8.0 \
-  SPARK_VERSION=2.4 \
-  SCALA_VERSION=2.11
+ENV GRAPHFRAMES_VERSION=0.8.1 \
+  SPARK_VERSION=3.0 \
+  SCALA_VERSION=2.12
 ENV GRAPHFRAMES_PACKAGE=${GRAPHFRAMES_VERSION}-spark${SPARK_VERSION}-s_${SCALA_VERSION}
 
 RUN ${SPARK_HOME}/bin/pyspark --packages graphframes:graphframes:${GRAPHFRAMES_PACKAGE}
