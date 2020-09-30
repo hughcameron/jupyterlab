@@ -65,9 +65,11 @@ COPY settings/theme.json /.vscode/settings.json
 RUN chown jovyan:users -R /.vscode
 
 
+## S3 JAR FOR SPARK##
+ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar $SPARK_HOME/jars
+
 ## POSTGRES JDBC FOR SPARK ##
 ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar $SPARK_HOME/jars
-RUN chmod a+r $SPARK_HOME/jars/*
 
 
 ## GRAPHFRAMES FOR SPARK ##
@@ -78,6 +80,8 @@ ENV GRAPHFRAMES_PACKAGE=${GRAPHFRAMES_VERSION}-spark${SPARK_VERSION}-s_${SCALA_V
 
 RUN ${SPARK_HOME}/bin/pyspark --packages graphframes:graphframes:${GRAPHFRAMES_PACKAGE}
 RUN wget http://dl.bintray.com/spark-packages/maven/graphframes/graphframes/${GRAPHFRAMES_PACKAGE}/graphframes-${GRAPHFRAMES_PACKAGE}.jar -qO ${SPARK_HOME}/jars/graphframes.jar
+
+RUN chmod a+r $SPARK_HOME/jars/*
 
 
 ## PERSIST JUPYTERLAB SETTINGS ##
